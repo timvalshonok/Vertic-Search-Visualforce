@@ -1,0 +1,23 @@
+<apex:page Controller="VerticController">
+    <apex:form>  
+        <apex:inputText value="{!searchKey}" label="SEARCH BY NAME"/>
+        <apex:commandButton action="{!searchByName}" value="FILTER"/>
+        <table>
+            <thead>
+                <tr class="slds-text-heading_label">              
+                    <th scope="col"><div title="First Name">First Name</div></th>
+                    <th scope="col"><div title="Last Name">Last Name</div></th>         
+                    <th scope="col"><div title="Email">Email</div></th>  
+                    <th scope="col"><div title="Account">Account</div></th>            
+                    <th scope="col"><div title="Phone">Phone</div></th>            
+                    <th scope="col"><div title="Created Date">Created Date</div></th>            
+                </tr>
+            </thead>
+            <tbody>
+                <apex:repeat value="{!contacts}" var="contact">
+                    <c:verticList contact="{!contact}"/>
+                </apex:repeat>
+            </tbody>
+        </table>
+    </apex:form>  
+</apex:page>

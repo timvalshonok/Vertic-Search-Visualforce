@@ -1,0 +1,17 @@
+<apex:component>
+<apex:attribute name="contact" type="contact" description="contacts"/>
+    <tr>
+        <td><div>{!contact.FirstName}</div></td>
+        <td><div>{!contact.LastName}</div></td>                   
+        <td><div>{!contact.Email}</div></td>                    
+        <td>
+            <div><apex:outputLink value="{!URLFOR($Action.Account.View, contact.AccountId)}">{!contact.Account.Name}</apex:outputLink></div>
+        </td>                  
+        <td><div>{!contact.Phone}</div></td>                    
+        <td>
+            <apex:outputText value="{0,date,MM'/'dd'/'yyyy h:mm a}" label="date"> 
+                <apex:param value="{!contact.CreatedDate}"/>
+            </apex:outputText>
+        </td>            
+    </tr>
+</apex:component>
