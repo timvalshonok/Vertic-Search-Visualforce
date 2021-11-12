@@ -1,5 +1,5 @@
 @isTest
-public with sharing class TestVerticController {
+public with sharing class VerticControllerTest {
 
     @isTest public static void TestController() {
 
